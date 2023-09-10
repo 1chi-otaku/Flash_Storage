@@ -42,12 +42,20 @@ namespace StorageDLL
         }
         virtual public void Init()
         {
-            Console.WriteLine("Enter Developer: ");
-            Developer = Console.ReadLine();
-            Console.WriteLine("Enter Name: ");
-            Name = Console.ReadLine();
-            Console.WriteLine("Enter Capacity:");
-            Capacity = double.Parse(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter Developer: ");
+                Developer = Console.ReadLine();
+                Console.WriteLine("Enter Name: ");
+                Name = Console.ReadLine();
+                Console.WriteLine("Enter Capacity:");
+                Capacity = double.Parse(Console.ReadLine());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
         }
         virtual public void Print(ILog log)
         {
